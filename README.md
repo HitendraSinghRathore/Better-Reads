@@ -18,30 +18,37 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Screenshots
 
 1.Home Page
+---
 ![home page](src/assets/screenshots/home1.PNG)
-*Home Page*
+_______________
+
 ![homepage2](src/assets/screenshots/home2.PNG)
-*Home page*
+
 
 2.Books Page
+---
 ![book page](src/assets/screenshots/book-page.PNG)
-*Book page not logged in*
+
 
 3.Log In page
+---
 ![log in page](src/assets/screenshots/login.PNG)
-*Login Page*
+
 
 4.Book Page Logged In
+---
 ![book logged in](src/assets/screenshots/book-logged.PNG)
-*Book Home page logged In*
+
 
 5.Add new book
+---
 ![add book](src/assets/screenshots/add-book.PNG)
-*Add Book Page*
+
 
 6.Edit Book
+---
 ![edit book](src/assets/screenshots/edit-book.PNG)
-*Edit Book*
+
 
 
 
