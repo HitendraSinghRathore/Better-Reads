@@ -1,26 +1,49 @@
 # BetterReads
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.4. The Application is to add and like books whichever you like. The application runs on ngRx and json-server for CRUD operations.
 
-## Development server
+## Steps to run
+  ### Prerequisites
+    1. Node version 12 .
+    2. NPM version 6 or above.
+    3. Angular CLI.
+  ### Steps
+    1. Download code repository.
+    2. Run  'npm install'.
+    3. After the step 2 is done open 2 command terminals inside the folder root.
+    4. On terminal 1 run 'npm run start:server'.
+    5. On terminal 2 run 'npm start'
+    6. Open your browser and go to 'localhost:4200'
+    
+## Screenshots
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1.Home Page
+![](src/assets/screenshots/home1.png)
+*Home Page*
+![](src/assets/screenshots/home2.png)
+*Home page*
 
-## Code scaffolding
+2.Books Page
+![](src/assets/screenshots/book-page.png)
+*Book page not logged in*
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+3.Log In page
+![](src/assets/screenshots/login.png)
+*Login Page*
 
-## Build
+4.Book Page Logged In
+![](src/assets/screenshots/book-logged.png)
+*Book Home page logged In*
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+5.Add new book
+![](src/assets/screenshots/add-book.png)
+*Add Book Page*
 
-## Running unit tests
+6.Edit Book
+![](src/assets/screenshots/edit-book.png)
+*Edit Book*
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 
