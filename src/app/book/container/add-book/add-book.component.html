@@ -1,0 +1,10 @@
+<div class="bg-white add-book-container">
+  <app-book-form
+    [selectedBook]="selectedBook$ | async"
+    [errorMessage]="errorMessage$ | async"
+    (handleNewForm)="createNew($event)"
+    (handleUpdate)="update($event)"
+    (handleDelete)="deleted($event)"
+    (handleCancel)="cancelled()"
+  ></app-book-form>
+</div>

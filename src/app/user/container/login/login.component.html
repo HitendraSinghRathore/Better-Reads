@@ -1,0 +1,8 @@
+<div class="background-image">
+  <div class="form-container w-full">
+    <app-login-form
+      [errorMessage]="errrorMessage$ | async"
+      (onSubmit)="handleSubmit($event)"
+    ></app-login-form>
+  </div>
+</div>

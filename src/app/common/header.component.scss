@@ -1,0 +1,13 @@
+.link-active {
+  color: black;
+  font-weight: 700;
+  background-color: white;
+  border-radius: 5px;
+}
+.link {
+  padding: 6px 10px;
+  border-bottom: solid 2px transparent;
+  &:hover {
+    border-bottom: solid 2px white;
+  }
+}

@@ -1,0 +1,99 @@
+<nav
+  class="flex items-center justify-between flex-wrap bg-transparent w-full p-6"
+>
+  <div class="text-white flex flex-wrap items-center p-0 z-10">
+    <svg
+      class="fill-current h-8 w-8 mr-2"
+      width="54"
+      height="54"
+      viewBox="0 0 54 54"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z"
+      />
+    </svg>
+
+    <a class="cursor-pointer font-semibold text-xl" routerLink="/"
+      >Better Reads</a
+    >
+  </div>
+
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto z-10">
+    <div class="justify-end ml-auto pt-1">
+      <a
+        class="block lg:inline-block lg:mt-0 text-white mr-6 cursor-pointer link"
+        routerLink="books"
+        [routerLinkActive]="['link-active']"
+      >
+        Books
+      </a>
+      <a
+        class="block lg:inline-block lg:mt-0 text-white mr-6 cursor-pointer link"
+        routerLink="addBook"
+        [routerLinkActive]="['link-active']"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Add New Book
+      </a>
+      <a
+        class="block lg:inline-block lg:mt-0 text-white cursor-pointer mr-6 link"
+        routerLink="login"
+        [routerLinkActive]="['link-active']"
+        *ngIf="!user"
+      >
+        Login
+      </a>
+      <div class="inline-block relative text-white" *ngIf="user">
+        Hi, {{ user?.name }}
+        <button
+          class="text-white font-bold ml-2 border-none"
+          (click)="toggleMenu()"
+        >
+          <svg
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="bi bi-chevron-down"
+            fill="currentColor"
+            *ngIf="!showMenu"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"
+            />
+          </svg>
+          <svg
+            *ngIf="showMenu"
+            width="1em"
+            height="1em"
+            viewBox="0 0 16 16"
+            class="bi bi-chevron-up"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+            />
+          </svg>
+        </button>
+        <div
+          class="absolute right-0 mt-2 w-48 bg-white rounded shadow-xl"
+          *ngIf="showMenu"
+        >
+          <div class="block px-2 py-4 text-black font-bold">
+            {{ user?.username }}
+          </div>
+          <hr />
+          <a
+            class="block px-4 py-2 text-gray-800 hover:bg-gray-800 hover:text-white cursor-pointer"
+            (click)="logout()"
+            >Logout</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

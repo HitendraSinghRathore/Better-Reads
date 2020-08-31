@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+// if you'd like to use it without importing all of bootstrap it requires
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0px !important;
+  background: url("/assets/images/banner.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,0 +1,106 @@
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.book {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  //max-width: 100%;
+  margin: 20px;
+  overflow: hidden;
+  width: 45%;
+  min-height: 300px;
+
+  h6 {
+    margin: 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  h2 {
+    letter-spacing: 1px;
+    margin: 10px 0;
+  }
+}
+.book-preview {
+  color: #fff;
+  padding: 30px;
+  width: 200px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  a {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 30px;
+    text-decoration: none;
+  }
+}
+.book-info {
+  padding: 30px;
+  position: relative;
+  width: 100%;
+}
+.likes-container {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  text-align: right;
+  width: 150px;
+}
+.btn {
+  background-color: #000000;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  padding: 12px 25px;
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+}
+.btn-white {
+  background-color: #c00d0d;
+  border: 0;
+  border-radius: 50px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  padding: 12px 25px;
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  letter-spacing: 1px;
+  &:hover {
+    background-color: rgb(71, 5, 5);
+    color: white;
+  }
+}
+.tag {
+  background: black;
+  border-radius: 15px;
+  color: white;
+  padding: 5px 10px;
+  margin-right: 5px;
+  font-size: 10px;
+}
+.error-block {
+  height: 80vh;
+}
+.error-text {
+  top: 35%;
+  left: 35%;
+  .text-box {
+    width: 400px;
+  }
+}

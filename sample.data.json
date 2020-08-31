@@ -1,0 +1,119 @@
+{
+  "users": [
+    {
+      "id": "tony@test.com",
+      "username": "tony@test.com",
+      "name": "Tony Stark",
+      "password": "tony@test.com"
+    },
+    {
+      "id": "thor@test.com",
+      "username": "thor@test.com",
+      "name": "Thor Odinson",
+      "password": "thor@test.com"
+    },
+    {
+      "id": "steve@test.com",
+      "username": "steve@test.com",
+      "name": "Steve Rogers",
+      "password": "steve@test.com"
+    }
+  ],
+  "books": [
+    {
+      "id": "1",
+      "addedBy": "Thor Odinson",
+      "author": "James Dashner",
+      "description": "When Thomas wakes up in the lift, the only thing he can remember is his first name. He has no recollection of his parents, his home, or how he got where he is. His memory is empty.But he's not alone. When the lift's doors open, Thomas finds himself surrounded by kids who welcome him to the Glade, a large expanse enclosed by stone walls.",
+      "imgUrl": "maze-runner.jpg",
+      "name": "The Maze Runner",
+      "tags": ["Dystopian", "Fiction", "Adventure"],
+      "publishYear": "2009",
+      "likes": [
+        "steve@test.com",
+        "romonoff@test.com",
+        "bruce@test.com",
+        "logan@test.com"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Divergent",
+      "author": "Veronica Roth",
+      "addedBy": "Tony Stark",
+      "tags": ["Science fiction", "Dystopian", "Teens"],
+      "description": "In Beatrice Prior's dystopian Chicago, society is divided into five factions, each dedicated to the cultivation of a particular virtue -- Candor (the honest), Abnegation (the selfless), Dauntless (the brave), Amity (the peaceful), and Erudite (the intelligent). On an appointed day of every year, all sixteen-year-olds must select the faction to which they will devote the rest of their lives. For Beatrice, the decision is between staying with her family and being who she really is -- she can't have both. So she makes a choice that surprises everyone, including herself.",
+      "publishYear": "2011",
+      "likes": [
+        "tony@test.com",
+        "xavier@test.com",
+        "bruce@test.com",
+        "romonoff@test.com",
+        "fantastic@test.com",
+        "storm@test.com",
+        "peter@test.com"
+      ],
+      "imgUrl": "divergent.jpg"
+    },
+    {
+      "id": "4",
+      "addedBy": "Tony Stark",
+      "author": "Marie Lu",
+      "description": "What was once the western United States is now home to the Republic, a nation perpetually at war with its neighbors. Born into an elite family in one of the Republic's wealthiest districts, fifteen-year-old June is a prodigy being groomed for success in the Republic's highest military circles. Born into the slums, fifteen-year-old Day is the country's most wanted criminal. But his motives may not be as malicious as they seem.",
+      "imgUrl": "legend.jpg",
+      "name": "Legend",
+      "tags": ["Science fiction", "Dystopian", "Speculative Fiction"],
+      "publishYear": "2011",
+      "likes": ["thor@test.com", "bruce@test.com", "fantastic@test.com"]
+    },
+    {
+      "id": "5",
+      "name": "The Adventures of Huckleberry Finn",
+      "author": "Mark Twain",
+      "description": "Huck Finn grew up along the Mississippi in the days of slavery. Huck was a homeless rebel -- a boy who loved freedom more than respectability. Huck isn't above lying and stealing but when he meets up with Jim, a runaway slave, he has a battle with his conscience. Jim tells Huck that his owner, wants to sell him to a slave trader down river for $800. Jim wants to go North to a free state. If he helps Jim escape, Huck knows he'll be in serious trouble with the law. But can he turn Jim in when all Jim wants is to be free?",
+      "publishYear": "1884",
+      "imgUrl": "huckleberry-finn.jpg",
+      "tags": ["Historical", "Fiction"],
+      "addedBy": "Steve Rogers",
+      "likes": ["steve@test.com", "bruce@test.com"]
+    },
+    {
+      "id": "6",
+      "name": "A christmas carol",
+      "author": "Charles Dickens",
+      "description": "Christmas should be a wonderful time. Mean old Scrooge says, 'Humbug,' when anyone mentions Christmas. He doesn't like giving money away and he resents giving his clerk Bob Cratchit the day off to spend with his family.",
+      "publishYear": "1843",
+      "imgUrl": "christmas-carol.jpg",
+      "tags": ["Historical", "Fiction"],
+      "addedBy": "Steve Rogers",
+      "likes": ["tony@test.com"]
+    },
+    {
+      "id": "7",
+      "name": "Emma",
+      "author": "Jane Austen",
+      "description": "EMMA, first published in 1816, was written when Jane Austen was at the height of her powers. In it, we have her two greatest comic creations -- the eccentric Mr. Woodhouse and that quintessential bore, Miss Bates. In it, too, we have her most profound characterization:",
+      "publishYear": "1815",
+      "imgUrl": "emma.jpg",
+      "tags": ["Historical", "Fiction"],
+      "addedBy": "Tony Stark",
+      "likes": [
+        "tony@test.com",
+        "logan@test.com",
+        "bruce@test.com",
+        "peter@test.com"
+      ]
+    },
+    {
+      "id": "9",
+      "addedBy": "Steve Rogers",
+      "author": "Amor Towles",
+      "description": "In 1922, Count Alexander Rostov is deemed an unrepentant aristocrat by a Bolshevik tribunal, and is sentenced to house arrest in the Metropol, a grand hotel across the street from the Kremlin. Rostov, an indomitable man of erudition and wit, has never worked a day in his life, and must now live in an attic room while some of the most tumultuous decades in Russian history are unfolding outside the hotel's doors. Unexpectedly, his reduced circumstances provide him entry into a much larger world of emotional discovery.",
+      "imgUrl": "gentleman-in-moscow.jpg",
+      "name": "A Gentleman in Moscow",
+      "tags": ["Literary", "Political"],
+      "publishYear": 2016,
+      "likes": ["steve@test.com"]
+    }
+  ]
+}

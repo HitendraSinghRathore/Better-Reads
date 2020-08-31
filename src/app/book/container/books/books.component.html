@@ -1,0 +1,16 @@
+<div class="bg-white text-black px-10 py-10 book-background">
+  <app-book-filters
+    [orderBy]="orderBy$ | async"
+    [searchData]="searchString$ | async"
+    (searchBooks)="searchBooks($event)"
+    (updateOrder)="updateOrderBy($event)"
+  ></app-book-filters>
+  <app-books-list
+    [selectedBooks]="selectedBooks$ | async"
+    [searchString]="searchString$ | async"
+    [orderBy]="searchString$ | async"
+    [errorMessage]="errorMessage$ | async"
+    [loggedInUser]="loggedInUser | async"
+    (updateLikes)="handleLikes($event)"
+  ></app-books-list>
+</div>

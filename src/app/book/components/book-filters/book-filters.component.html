@@ -1,0 +1,48 @@
+<div class="text-black flex">
+  <div class="font-lg flex px-4 py-4 w-1/2 mr-8">
+    <label class="font-extrabold text-black w-256 px-2 py-2 mr-4 uppercase"
+      >Search By:</label
+    >
+    <input
+      type="text"
+      class="text-bold text-black border-b-2 border-black px-2 py-2"
+      placeholder="Enter Search String"
+      [(ngModel)]="searchString"
+    />
+
+    <button
+      class="bg-black text-white font-bold px-4 py-2 hover:bg-black-700"
+      (click)="search()"
+    >
+      Search
+    </button>
+    <button
+      *ngIf="searchString"
+      class="bg-white px-4 py-2 font-bold text-black"
+      (click)="reset()"
+    >
+      Clear
+    </button>
+  </div>
+  <div class="py-4">
+    <span class="mx-2 font-extrabold text-black uppercase">Order By:</span>
+    <button
+      class="px-4 py-2 font-bold"
+      [ngClass]="{
+        'bg-black text-white': orderBy === 'name'
+      }"
+      (click)="toggleOrder('name')"
+    >
+      Name
+    </button>
+    <button
+      class="px-4 py-2 font-bold"
+      [ngClass]="{
+        'bg-black text-white': orderBy === 'likes'
+      }"
+      (click)="toggleOrder('likes')"
+    >
+      Likes
+    </button>
+  </div>
+</div>

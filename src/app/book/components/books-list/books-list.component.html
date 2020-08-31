@@ -1,0 +1,72 @@
+<div class="px-4 py-8 font-extrabold text-xl">
+  Books:
+  <span *ngIf="searchString"> You searched for "{{ searchString }}"</span>
+</div>
+<div *ngIf="bookdisplayList?.length > 0 && !errorMessage">
+  <div class="flex books-container">
+    <div class="book" *ngFor="let book of bookdisplayList">
+      <div
+        class="book-preview"
+        [style.background]="'url(assets/books/' + book.imgUrl + ')'"
+      >
+        <h6 class="bg-black text-white text-xs font-bold px-2 py-4">
+          {{ book.author }}
+        </h6>
+        <h2 class="bg-white text-black font-extrabold px-4 py-2">
+          {{ book.name }}
+        </h2>
+        <a
+          class="px-8 py-4 rounded-full bg-white border-2 border-black text-black text-extrabold font-lg cursor-pointer hover:bg-black hover:text-white"
+          style="position: absolute; bottom: 10px"
+          [routerLink]="['/addBook', book.id]"
+          >Edit
+        </a>
+      </div>
+      <div class="book-info">
+        <div class="likes-container">{{ book.likes?.length }} Likes</div>
+        <h6>Added by: {{ book.addedBy }}</h6>
+        <h2>Tags</h2>
+        <span class="tag" *ngFor="let tag of book?.tags"> {{ tag }}</span>
+        <section
+          style="
+            height: -webkit-fit-content;
+            padding-bottom: 20px;
+            margin-top: 5px;
+          "
+        >
+          {{ book.description }}
+        </section>
+        <button
+          [ngClass]="{
+            btn: book.status === 'like',
+            'btn-white': book.status === 'dislike'
+          }"
+          *ngIf="loggedInUser"
+          (click)="handleLike(book)"
+        >
+          {{ book.status }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div
+  class="relative w-full error-block"
+  *ngIf="bookdisplayList?.length == 0 || errorMessage"
+>
+  <div class="absolute error-text">
+    <div
+      class="text-3xl font-extrabold bg-black text-white px-4 py-2 pr-8 capitalize text-box"
+    >
+      Error getting books!
+    </div>
+    <div *ngIf="errorMessage">{{ errorMessage }}</div>
+    <div
+      *ngIf="!errorMessage && bookdisplayList?.length == 0"
+      class="font-bold"
+    >
+      No Books matches your criteria. Please update and try again.
+    </div>
+  </div>
+</div>

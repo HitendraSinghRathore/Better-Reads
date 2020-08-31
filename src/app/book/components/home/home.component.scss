@@ -1,0 +1,92 @@
+.banner-image {
+  height: 80vh;
+  z-index: -1;
+
+  position: relative;
+  .inner-text {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    color: white;
+
+    .title-box {
+      font-weight: bolder;
+      text-justify: left;
+      font-size: 3rem;
+      background: white;
+      color: black;
+      width: 480px;
+      animation: backdrop 1s ease-in-out;
+    }
+    .data-box {
+      font-size: 1.1rem;
+      text-justify: left;
+    }
+  }
+}
+.image-container {
+  height: 300px;
+  width: 400px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+
+  position: relative;
+  .image-data {
+    height: 250px;
+    width: 350px;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    -webkit-box-shadow: inset -2px 3px 22px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: inset -2px 3px 22px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: inset -2px 3px 22px 1px rgba(0, 0, 0, 0.75);
+  }
+}
+.text-headline {
+  width: 300px;
+  padding-left: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.footer {
+  height: 200px;
+}
+@keyframes backdrop {
+  0% {
+    margin-left: -100%;
+    background-color: transparent;
+  }
+  100% {
+    margin-left: 0;
+    background-color: white;
+  }
+}
+@-webkit-keyframes backdrop {
+  0% {
+    margin-left: -100%;
+    background-color: transparent;
+  }
+  100% {
+    margin-left: 0;
+    background-color: white;
+  }
+}
+@-moz-keyframes backdrop {
+  0% {
+    margin-left: -100%;
+    background-color: transparent;
+  }
+  100% {
+    margin-left: 0;
+    background-color: white;
+  }
+}
+@-o-keyframes backdrop {
+  0% {
+    margin-left: -100%;
+    background-color: transparent;
+  }
+  100% {
+    margin-left: 0;
+    background-color: white;
+  }
+}

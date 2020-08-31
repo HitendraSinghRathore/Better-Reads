@@ -1,0 +1,189 @@
+<div class="py-8 px-16 text-black">
+  <h3 class="bg-black text-white px-4 py-2 ml-16 font-extrabold text-lg w-64">
+    <span *ngIf="!editMode">Add New Book</span>
+    <span *ngIf="editMode">Edit Book</span>
+  </h3>
+  <div class="ml-16 mt-8 form-container">
+    <form novalidate [formGroup]="bookForm" (submit)="submitForm()">
+      <div class="flex mb-4">
+        <div class="mr-4 double-row-input">
+          <label class="font-bold block" for="id">Book ID</label>
+          <input
+            type="text"
+            formControlName="id"
+            name="id"
+            class="bg-white px-4 py-2 border-2 border-black w-full"
+            *ngIf="!editMode"
+          />
+          <div
+            class="text-red-600 text-sm"
+            *ngIf="
+              bookForm.get('id').errors?.required && bookForm.get('id').touched
+            "
+          >
+            Book Id is required.
+          </div>
+          <div
+            class="w-full bg-gray-500 px-4 py-2 border-2 border-black w-full"
+            *ngIf="editMode"
+          >
+            {{ bookForm.get("id").value }}
+          </div>
+        </div>
+        <div class="mr-4 double-row-input">
+          <label class="font-bold block" for="name">Book Name</label>
+          <input
+            type="text"
+            formControlName="name"
+            name="name"
+            class="bg-white px-4 py-2 border-2 border-black w-full"
+          />
+          <div
+            class="text-red-600 text-sm"
+            *ngIf="
+              bookForm.get('name').errors?.required &&
+              bookForm.get('name').touched
+            "
+          >
+            Book Id is required.
+          </div>
+        </div>
+      </div>
+      <div class="flex mb-4">
+        <div class="mr-4 double-row-input">
+          <label class="font-bold block" for="author">Author Name</label>
+          <input
+            type="text"
+            formControlName="author"
+            name="author"
+            class="bg-white px-4 py-2 border-2 border-black w-full"
+          />
+          <div
+            class="text-red-600 text-sm"
+            *ngIf="
+              bookForm.get('author').errors?.required &&
+              bookForm.get('author').touched
+            "
+          >
+            Author Name is required.
+          </div>
+        </div>
+        <div class="mr-4 double-row-input">
+          <label class="font-bold block" for="publishYear"
+            >Year of Publishing</label
+          >
+          <input
+            type="number"
+            formControlName="publishYear"
+            name="publishYear"
+            class="bg-white px-4 py-2 border-2 border-black w-full"
+          />
+          <div
+            class="text-red-600 text-sm"
+            *ngIf="
+              bookForm.get('publishYear').errors?.required &&
+              bookForm.get('publishYear').touched
+            "
+          >
+            Publish Year is required.
+          </div>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="font-bold block" for="imgUrl">Image name</label>
+        <input
+          type="text"
+          formControlName="imgUrl"
+          name="imgUrl"
+          class="bg-white px-4 py-2 border-2 border-black w-full"
+        />
+        <div
+          class="text-red-600 text-sm"
+          *ngIf="
+            bookForm.get('imgUrl').errors?.required &&
+            bookForm.get('imgUrl').touched
+          "
+        >
+          Image name must be present.(Name with extension as in assets folder)
+        </div>
+      </div>
+      <div class="mb-4">
+        <label class="font-bold block" for="description">Description</label>
+        <textarea
+          rows="5"
+          cols="200"
+          formControlName="description"
+          name="description"
+          class="bg-white px-4 py-2 border-2 border-black w-full"
+        ></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="font-bold block" for="tags">Tags</label>
+        <div
+          class="mb-2 flex"
+          formArrayName="tags"
+          *ngFor="let tag of tags.controls; let i = index"
+        >
+          <input
+            type="text"
+            [formControlName]="i"
+            class="bg-white px-4 py-2 border-2 border-black"
+          />
+          <div *ngIf="i === tags.controls.length - 1">
+            <button
+              class="mr-4 ml-4 px-4 py-2 bg-black text-white border-2 border-black font-bold"
+              (click)="addTag()"
+            >
+              Add Tag
+            </button>
+            <button
+              *ngIf="i > 0"
+              class="mr-4 px-4 py-2 bg-white text-black font-bold border-2 border-black"
+              (click)="deleteTag()"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+        <div
+          class="text-red-600"
+          *ngIf="
+            bookForm.get('tags').invalid &&
+            bookForm.get('tags').touched &&
+            bookForm.get('tags').value.length === 1
+          "
+        >
+          Tags cannot be empty
+        </div>
+      </div>
+      <hr class="border-2 border-black" />
+      <div class="w-full mt-4">
+        <button
+          type="submit"
+          [disabled]="!bookForm.valid"
+          class="bg-gray-800 hover:bg-gray-700 text-white font-bold py-2 px-4 border border-b-4 border-black hover:border-gray-800 rounded"
+          [ngClass]="{
+            'cursor-not-allowed bg-gray-300 hover:bg-gray-300': !bookForm.valid
+          }"
+        >
+          <span *ngIf="editMode">Edit</span><span *ngIf="!editMode">Add</span>
+        </button>
+        <button
+          type="reset"
+          (click)="cancelFrom()"
+          class="bg-white-800 ml-4 hover:bg-gray-200 text-black font-bold py-2 px-4 border border-b-4 border-black hover:border-gray-800 rounded"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+    <button
+      (click)="deleteForm($event)"
+      class="bg-red-600 float-right ml-4 hover:bg-red-500 text-white font-bold py-2 px-4 border border-b-4 border-red-900 hover:border-red-800 rounded"
+      style="margin-top: -50px"
+      *ngIf="editMode"
+    >
+      Delete
+    </button>
+  </div>
+</div>

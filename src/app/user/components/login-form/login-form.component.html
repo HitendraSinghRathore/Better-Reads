@@ -1,0 +1,86 @@
+<div
+  class="h-1/2 bg-white rounded text-gray-900 py-8 px-6 shadow-xl mx-auto form-card"
+>
+  <h4 class="mb-4 font-extrabold text-xl text-center">Login</h4>
+  <div class="form-fields">
+    <div *ngIf="errorMessage" class="p-4 text-white bg-red-600">
+      {{ errorMessage }}
+    </div>
+    <form (submit)="submitForm()" novalidate [formGroup]="loginForm">
+      <div class="w-full px-2 mb-2">
+        <label class="block font-bold py-2" for="username"
+          >Username:
+          <span class="font-thin text-gray-600 italic float-right"
+            >required</span
+          ></label
+        >
+        <input
+          type="text"
+          name="username"
+          class="hover:border-black hover:border-2 border-gray-600 border-2 rounded w-full p-2"
+          id="username"
+          placeholder="abc@domain.com"
+          formControlName="username"
+          [ngClass]="{
+            'border-red-600':
+              loginForm.get('username').touched &&
+              loginForm.get('username').errors?.required
+          }"
+        />
+        <span
+          class="text-red-600"
+          *ngIf="
+            loginForm.get('username').touched &&
+            loginForm.get('username').errors?.required
+          "
+          >Please enter a valid username</span
+        >
+      </div>
+      <div class="w-full px-2 mb-4">
+        <label class="block font-bold py-2" for="password"
+          >Password:
+          <span class="font-thin text-gray-600 italic float-right"
+            >required</span
+          ></label
+        >
+        <input
+          type="password"
+          name="password"
+          placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;"
+          class="hover:border-black hover:border-2 border-gray-600 border-2 rounded w-full p-2"
+          id="password"
+          formControlName="password"
+          [ngClass]="{
+            ' border-red-600':
+              loginForm.get('password').touched &&
+              loginForm.get('password').errors?.required
+          }"
+        />
+        <span
+          class="text-red-600"
+          *ngIf="
+            loginForm.get('password').touched &&
+            loginForm.get('password').errors?.required
+          "
+          >Please enter the password.</span
+        >
+      </div>
+      <button
+        class="bg-black hover:bg-gray-800 text-white font-semibold py-2 px-4 ml-2 border border-black"
+        type="submit"
+        [disabled]="!loginForm.valid"
+        [ngClass]="{
+          'cursor-not-allowed bg-gray-600': !loginForm.valid
+        }"
+      >
+        Submit
+      </button>
+      <button
+        class="bg-transparent hover:bg-black text-black border border-black hover:border-none hover:bg-black hover:text-white font-semibold py-2 px-4 ml-2"
+        type="reset"
+      >
+        Cancel
+      </button>
+    </form>
+  </div>
+</div>
